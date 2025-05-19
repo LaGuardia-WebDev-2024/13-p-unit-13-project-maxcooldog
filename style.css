@@ -1,22 +1,26 @@
-#movie-result {
-  background: rgb(244, 98, 181);
-  border: 5px solid black;
-  font-size: 24px;
-  height: 160px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Delius&family=Poetsen+One&display=swap");
+
+html {
+  background-color: #c4d6f2;
+  padding-left: 20px;
 }
 
-#book-result {
-  background: rgb(196, 159, 255);
-  border: 5px solid black;
-  font-size: 24px;
-  height: 160px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+img{
+  border-radius: 30px;
 }
 
-hr {
-  height: 5px;
-  background-color: black;
+h1 {
+  font-family: "Poetsen One", sans-serif;
+  color:#180736;
+  background-color:white;
+}
+
+button {
+  color:#c4f2ca;
+  background-color:#180736;
+  border-color:blue;
+}
+
+button:hover{
+  color:yellow;
 }
