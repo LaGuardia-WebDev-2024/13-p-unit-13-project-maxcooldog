@@ -1,18 +1,17 @@
-<!-- Unit 12 Project
+<!-- Unit 13 Project
 Requirements
-[ yes ] $() Select by Element, ID AND Class 
-[ yes ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  yes] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Two Different jQuery Animation Methods 
+[ yes ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
-Select ONE Additional 
-[ no ] Feature 1 - Use .addClass() method
-[ no ] Feature 2 - Use a variable in javaScript 
-[ no ] Feature 3 - Use .mouseover() method
-[ yes ] Feature 4 - Use .show() method
-[ no ] Feature 5 - Use .append() method
+Select ONE Additional Feature to Add  
+[ no ] Feature 1 - Google Font
+[ no ] Feature 2 - Upload a Font
+[ no ] Feature 3 - .mouseover() Method
+[ yes ] Feature 4 - :hover Feature 
+[ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
-
 
 <!DOCTYPE html>
 <html>
@@ -22,59 +21,71 @@ Select ONE Additional
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-      <button id="mem3-button">snack #1</button>
-    <button id="mem2-button">snack #2</button>
-    <button id="mem1-button">snack #3</button>
-
-    <h1>My Top 3 Snacks of <span>This Year</span></h1>
-    <ol>
-      <li>
-        <h3 id="mem1" class="1">Snack #1</h3>
-        <img
-          id="snack1"
-          src="https://mobileimages.lowes.com/productimages/87571f18-ea0e-4e96-b7e6-7c22596d57e6/68969015.jpeg"
-        />
-      </li>
-
-      <li>
-        <h3 id="mem2" class="2">Snack #2</h3>
-         <img
-          id="snack2"
-          src="https://lh3.googleusercontent.com/proxy/0gpx26ztRHe6OvwblS54gn357pnux6k5vsfqcKtT2pbl_crPTr5N--fVJvoyuovc6n6CkBz3zXFq2-wSxKDEMnLdz5E8_7tIJAl8yYX97mQ01JyyzWHmWZXW73uZiC-E7A4bJohPon7iDoFZ62ZX2gP_xpqHziSU3hCKErJ0B2qvqoxjlSRfjU3FJpXFMFnmub7OSOIp"
-        />
-      </li>
-
-      <li>
-        <h3 id="mem3" class="3">Snack #3</h3>
-        <img
-          id="snack3"
-          src="https://www.kroger.com/product/images/xlarge/front/0003800014409"
-          
-        />
-      </li>
-    </ol>
+    <form id="ice-form">
+      <label>
+        What is my favorite ice cream?
+        <select id="ice-answer">
+          <option value="ice1">rainbow sherbet</option>
+          <option value="ice2">cookies and cream</option>
+          <option value="ice3">chocolate</option>
+          <option value="ice4">vanilla</option>
+        </select>
+      </label>
+      <button type="submit">Check Ice cream Answer</button>
+      <div id="ice-result"></div>
+    </form>
+    <hr />
+    <!-- basketball Question -->
+    <form id="basketball-form">
+      <label>
+        What is my favorite basketball team?
+        <select id="basketball-answer">
+          <option value="basketball1">Knicks</option>
+          <option value="basketball2">Nets</option>
+          <option value="basketball3">Lakers</option>
+          <option value="basketball4">Warriors</option>
+        </select>
+      </label>
+      <button type="submit">Check Team Answer</button>
+      <div id="basketball-result"></div>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-       $("#mem3-button").click(function () {
-        $("#mem1").css("color", "purple");
-        $("#snack1").show(200);
-        $(".1").text("Lays");
+      // Ice cream question jQuery Code
+      $("#ice-form").on("submit", function (event) {
+        event.preventDefault();
+        
+        var $answer = $("#ice-answer");
+        var answer = $answer.val();
+        
+        console.log(answer);
+        
+        if (answer === "ice1") { 
+          $("#ice-result").text("Yes");
+        } else {
+          $("#ice-result").text("No");
+        }
       });
 
-      $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
-        $("#snack2").show(200);
-        $(".2").text("Takis");
-      });
-
-      $("#mem1-button").click(function () {
-        $("#mem3").css("color", "green");
-        $("#snack3").show(200);
-        $(".3").text("Pringles");
+      // Basketball question jQuery Code
+      $("#basketball-form").on("submit", function (event) {
+        event.preventDefault();
+        
+        var $answer = $("#basketball-answer");
+        var answer = $answer.val();
+        
+        console.log(answer);
+        
+        if (answer === "basketball2") { 
+          $("#basketball-result").text("Yes");
+        } else {
+          $("#basketball-result").text("No");
+        }
       });
     </script>
   </body>
 </html>
+
 
 <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
